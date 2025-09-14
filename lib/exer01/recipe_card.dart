@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'bullet_item.dart';
 import 'info_pill.dart';
 
 class RecipeCard extends StatelessWidget {
@@ -76,6 +77,13 @@ class RecipeCard extends StatelessWidget {
                     fontWeight: FontWeight.w800,
                   ),
                 ),
+                const SizedBox(height: 10),
+                const BulletItem(text: '1 whole chicken'),
+                const BulletItem(text: 'lemons'),
+                const BulletItem(text: 'lemons'),
+                const BulletItem(text: 'Fresh rosemary'),
+                const BulletItem(text: 'Resiple cormarn'),
+                const BulletItem(text: 'Pelite 1 ont Chicken'),
               ],
             ),
           ),
