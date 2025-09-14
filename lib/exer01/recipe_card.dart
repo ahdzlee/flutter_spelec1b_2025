@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'info_pill.dart';
+
 class RecipeCard extends StatelessWidget {
   const RecipeCard({super.key});
 
@@ -35,13 +37,38 @@ class RecipeCard extends StatelessWidget {
           // Lemon Herb Roasted Chicken Text
           Padding(
             padding: const EdgeInsets.fromLTRB(20, 18, 20, 24),
-            child: Text(
-              'Lemon Herb Roasted Chicken',
-              style: theme.textTheme.headlineLarge?.copyWith(
-                color: navy,
-                fontWeight: FontWeight.w800,
-                height: 1.15,
-              ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'Lemon Herb Roasted Chicken',
+                  style: theme.textTheme.headlineLarge?.copyWith(
+                    color: navy,
+                    fontWeight: FontWeight.w800,
+                    height: 1.15,
+                  ),
+                ),
+                const SizedBox(height: 16),
+
+                // Info grid (2 columns)
+                GridView(
+                  padding: EdgeInsets.zero,
+                  shrinkWrap: true,
+                  physics: const NeverScrollableScrollPhysics(),
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                    childAspectRatio: 3.5,
+                  ),
+                  children: const [
+                    InfoPill(icon: Icons.timer, label: 'Prep: 15 min'),
+                    InfoPill(
+                      icon: Icons.restaurant_menu,
+                      label: 'Difficulty: Easy',
+                    ),
+                    InfoPill(icon: Icons.star, label: 'Cook: 45 min'),
+                  ],
+                ),
+              ],
             ),
           ),
         ],
