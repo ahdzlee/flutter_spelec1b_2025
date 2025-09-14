@@ -68,6 +68,14 @@ class RecipeCard extends StatelessWidget {
                     InfoPill(icon: Icons.star, label: 'Cook: 45 min'),
                   ],
                 ),
+                const SizedBox(height: 16),
+                Text(
+                  'Ingredients',
+                  style: theme.textTheme.titleLarge?.copyWith(
+                    color: navy,
+                    fontWeight: FontWeight.w800,
+                  ),
+                ),
               ],
             ),
           ),
