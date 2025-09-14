@@ -13,82 +13,111 @@ class RecipeCard extends StatelessWidget {
     final cream = const Color(0xFFF2F0E6);
     final navy = const Color(0xFF16384B);
 
-    return Card(
-      elevation: 6,
-      color: cream,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(radius),
-      ),
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          // Top image with rounded top corners
-          ClipRRect(
-            borderRadius: const BorderRadius.only(
-              topLeft: Radius.circular(radius),
-              topRight: Radius.circular(radius),
-            ),
-            child: Image.asset(
-              'assets/roasted_chicken.jpeg',
-              fit: BoxFit.cover,
-            ),
+    return Stack(
+      children: [
+        Card(
+          elevation: 6,
+          color: cream,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(radius),
           ),
-
-          // Lemon Herb Roasted Chicken Text
-          Padding(
-            padding: const EdgeInsets.fromLTRB(20, 18, 20, 24),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  'Lemon Herb Roasted Chicken',
-                  style: theme.textTheme.headlineLarge?.copyWith(
-                    color: navy,
-                    fontWeight: FontWeight.w800,
-                    height: 1.15,
-                  ),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              // Top image with rounded top corners
+              ClipRRect(
+                borderRadius: const BorderRadius.only(
+                  topLeft: Radius.circular(radius),
+                  topRight: Radius.circular(radius),
                 ),
-                const SizedBox(height: 16),
+                child: Image.asset(
+                  'assets/roasted_chicken.jpeg',
+                  fit: BoxFit.cover,
+                ),
+              ),
 
-                // Info grid (2 columns)
-                GridView(
-                  padding: EdgeInsets.zero,
-                  shrinkWrap: true,
-                  physics: const NeverScrollableScrollPhysics(),
-                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2,
-                    childAspectRatio: 3.5,
-                  ),
-                  children: const [
-                    InfoPill(icon: Icons.timer, label: 'Prep: 15 min'),
-                    InfoPill(
-                      icon: Icons.restaurant_menu,
-                      label: 'Difficulty: Easy',
+              // Lemon Herb Roasted Chicken Text
+              Padding(
+                padding: const EdgeInsets.fromLTRB(20, 18, 20, 24),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Lemon Herb Roasted Chicken',
+                      style: theme.textTheme.headlineLarge?.copyWith(
+                        color: navy,
+                        fontWeight: FontWeight.w800,
+                        height: 1.15,
+                      ),
                     ),
-                    InfoPill(icon: Icons.star, label: 'Cook: 45 min'),
+                    const SizedBox(height: 16),
+
+                    // Info grid (2 columns)
+                    GridView(
+                      padding: EdgeInsets.zero,
+                      shrinkWrap: true,
+                      physics: const NeverScrollableScrollPhysics(),
+                      gridDelegate:
+                          const SliverGridDelegateWithFixedCrossAxisCount(
+                            crossAxisCount: 2,
+                            childAspectRatio: 3.5,
+                          ),
+                      children: const [
+                        InfoPill(icon: Icons.timer, label: 'Prep: 15 min'),
+                        InfoPill(
+                          icon: Icons.restaurant_menu,
+                          label: 'Difficulty: Easy',
+                        ),
+                        InfoPill(icon: Icons.star, label: 'Cook: 45 min'),
+                      ],
+                    ),
+                    const SizedBox(height: 16),
+                    Text(
+                      'Ingredients',
+                      style: theme.textTheme.titleLarge?.copyWith(
+                        color: navy,
+                        fontWeight: FontWeight.w800,
+                      ),
+                    ),
+                    const SizedBox(height: 10),
+                    const BulletItem(text: '1 whole chicken'),
+                    const BulletItem(text: 'lemons'),
+                    const BulletItem(text: 'lemons'),
+                    const BulletItem(text: 'Fresh rosemary'),
+                    const BulletItem(text: 'Resiple cormarn'),
+                    const BulletItem(text: 'Pelite 1 ont Chicken'),
                   ],
                 ),
-                const SizedBox(height: 16),
-                Text(
-                  'Ingredients',
-                  style: theme.textTheme.titleLarge?.copyWith(
-                    color: navy,
-                    fontWeight: FontWeight.w800,
-                  ),
-                ),
-                const SizedBox(height: 10),
-                const BulletItem(text: '1 whole chicken'),
-                const BulletItem(text: 'lemons'),
-                const BulletItem(text: 'lemons'),
-                const BulletItem(text: 'Fresh rosemary'),
-                const BulletItem(text: 'Resiple cormarn'),
-                const BulletItem(text: 'Pelite 1 ont Chicken'),
-              ],
+              ),
+            ],
+          ),
+        ),
+
+        // Floating heart button bottom-right
+        Positioned(
+          right: 24,
+          bottom: 24,
+          child: PhysicalModel(
+            color: Colors.transparent,
+            shadowColor: Colors.black26,
+            elevation: 8,
+            shape: BoxShape.circle,
+            child: Container(
+              decoration: BoxDecoration(
+                color: Colors.white70,
+                shape: BoxShape.circle,
+              ),
+              padding: const EdgeInsets.all(10),
+              child: const Icon(
+                Icons.favorite,
+                color: Colors.black87,
+                size: 24,
+              ),
             ),
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }
