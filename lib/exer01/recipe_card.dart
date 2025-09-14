@@ -6,7 +6,9 @@ class RecipeCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     const radius = 24.0;
+    final theme = Theme.of(context);
     final cream = const Color(0xFFF2F0E6);
+    final navy = const Color(0xFF16384B);
 
     return Card(
       elevation: 6,
@@ -29,7 +31,19 @@ class RecipeCard extends StatelessWidget {
               fit: BoxFit.cover,
             ),
           ),
-          
+
+          // Lemon Herb Roasted Chicken Text
+          Padding(
+            padding: const EdgeInsets.fromLTRB(20, 18, 20, 24),
+            child: Text(
+              'Lemon Herb Roasted Chicken',
+              style: theme.textTheme.headlineLarge?.copyWith(
+                color: navy,
+                fontWeight: FontWeight.w800,
+                height: 1.15,
+              ),
+            ),
+          ),
         ],
       ),
     );
