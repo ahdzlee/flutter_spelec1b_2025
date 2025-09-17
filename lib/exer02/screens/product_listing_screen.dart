@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
+import '../models/sample_products.dart';
 import '../widgets/frosted_app_bar.dart';
+import '../widgets/product_card.dart';
 
 /// A product listing screen that mirrors the provided mock design.
 ///
@@ -19,7 +21,17 @@ class ProductListingScreen extends StatelessWidget {
       home: Scaffold(
         backgroundColor: const Color(0xFFF2F5F9),
         appBar: FrostedAppBar(title: 'Flutter Mart', onCartPressed: () {}),
-        body: SafeArea(child: Center(child: Text('Product Listing Screen'))),
+        body: SafeArea(
+          child: ListView.separated(
+            padding: const EdgeInsets.fromLTRB(16, 12, 16, 24),
+            itemCount: kSampleProducts.length,
+            separatorBuilder: (_, __) => const SizedBox(height: 18),
+            itemBuilder: (context, index) {
+              final product = kSampleProducts[index];
+              return ProductCard(product: product);
+            },
+          ),
+        ),
       ),
     );
   }
