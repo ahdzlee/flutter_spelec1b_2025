@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'exer01/recipe_home_screen.dart';
+import 'exer02/screens/product_listing_screen.dart';
 
 void main() {
-  runApp(const RecipeHomeScreen());
+  runApp(const ProductListingScreen());
 }
