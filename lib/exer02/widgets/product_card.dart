@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_spelec1b_2025/exer02/widgets/product_thumbnail.dart';
 
 import '../models/product.dart';
+import 'star_rating.dart';
 
 class ProductCard extends StatelessWidget {
   const ProductCard({super.key, required this.product});
@@ -48,6 +49,8 @@ class ProductCard extends StatelessWidget {
                     color: Colors.grey[700],
                   ),
                 ),
+                const SizedBox(height: 8),
+                Row(children: [StarRating(rating: product.rating)]),
               ],
             ),
           ],

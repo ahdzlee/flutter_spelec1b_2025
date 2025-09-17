@@ -1,4 +1,5 @@
 {
+  "color-highlight.enable": false,
   "cSpell.words": [
     "exer",
     "spelec"
@@ -15,5 +16,5 @@
   "dart.previewFlutterUiGuidesCustomTracking": true,
   "editor.autoClosingBrackets": "always",
   "editor.bracketPairColorization.enabled": true,
-  "editor.renderWhitespace": "all"
+  "editor.renderWhitespace": "all",
 }
