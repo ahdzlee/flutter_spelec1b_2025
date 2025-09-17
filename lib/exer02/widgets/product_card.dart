@@ -50,7 +50,19 @@ class ProductCard extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 8),
-                Row(children: [StarRating(rating: product.rating)]),
+                Row(
+                  children: [
+                    StarRating(rating: product.rating),
+                    const SizedBox(width: 8),
+                    Text(
+                      product.rating.toStringAsFixed(1),
+                      style: theme.textTheme.bodyMedium?.copyWith(
+                        color: Colors.grey[800],
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                  ],
+                ),
               ],
             ),
           ],
