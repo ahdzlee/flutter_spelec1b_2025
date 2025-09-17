@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_spelec1b_2025/exer02/widgets/product_thumbnail.dart';
 
 import '../models/product.dart';
 
@@ -21,7 +22,10 @@ class ProductCard extends StatelessWidget {
           ),
         ],
       ),
-      child: Text(product.title),
+      child: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Row(children: [ProductThumbnail(icon: product.icon)]),
+      ),
     );
   }
 }
