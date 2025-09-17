@@ -10,6 +10,8 @@ class ProductCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+
     return Container(
       decoration: ShapeDecoration(
         color: Colors.white,
@@ -24,7 +26,24 @@ class ProductCard extends StatelessWidget {
       ),
       child: Padding(
         padding: const EdgeInsets.all(16.0),
-        child: Row(children: [ProductThumbnail(icon: product.icon)]),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            ProductThumbnail(icon: product.icon),
+            const SizedBox(width: 16),
+            Column(
+              children: [
+                Text(
+                  product.title,
+                  style: theme.textTheme.titleMedium?.copyWith(
+                    fontWeight: FontWeight.w700,
+                    color: const Color(0xFF0C1B33),
+                  ),
+                ),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
