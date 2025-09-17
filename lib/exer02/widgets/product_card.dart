@@ -3,6 +3,7 @@ import 'package:flutter_spelec1b_2025/exer02/widgets/product_thumbnail.dart';
 
 import '../models/product.dart';
 import 'star_rating.dart';
+import 'tag_pill.dart';
 
 class ProductCard extends StatelessWidget {
   const ProductCard({super.key, required this.product});
@@ -62,6 +63,12 @@ class ProductCard extends StatelessWidget {
                       ),
                     ),
                   ],
+                ),
+                const SizedBox(height: 12),
+                Wrap(
+                  spacing: 8,
+                  runSpacing: 8,
+                  children: [for (final tag in product.tags) TagPill(tag: tag)],
                 ),
               ],
             ),
