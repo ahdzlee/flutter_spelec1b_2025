@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../widgets/frosted_app_bar.dart';
+
 /// A product listing screen that mirrors the provided mock design.
 ///
 /// It shows:
@@ -16,6 +18,7 @@ class ProductListingScreen extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         backgroundColor: const Color(0xFFF2F5F9),
+        appBar: FrostedAppBar(title: 'Flutter Mart', onCartPressed: () {}),
         body: SafeArea(child: Center(child: Text('Product Listing Screen'))),
       ),
     );
