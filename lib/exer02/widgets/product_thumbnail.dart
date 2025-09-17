@@ -8,8 +8,8 @@ class ProductThumbnail extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 84,
-      width: 84,
+      height: 124,
+      width: 124,
       decoration: ShapeDecoration(
         color: const Color(0xFFF5F8FC),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(18)),
