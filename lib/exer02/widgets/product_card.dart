@@ -32,12 +32,20 @@ class ProductCard extends StatelessWidget {
             ProductThumbnail(icon: product.icon),
             const SizedBox(width: 16),
             Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   product.title,
                   style: theme.textTheme.titleMedium?.copyWith(
                     fontWeight: FontWeight.w700,
                     color: const Color(0xFF0C1B33),
+                  ),
+                ),
+                const SizedBox(height: 4),
+                Text(
+                  _formatPrice(product.price),
+                  style: theme.textTheme.bodyMedium?.copyWith(
+                    color: Colors.grey[700],
                   ),
                 ),
               ],
@@ -47,4 +55,6 @@ class ProductCard extends StatelessWidget {
       ),
     );
   }
+
+  String _formatPrice(double price) => '\$${price.toStringAsFixed(2)}';
 }
