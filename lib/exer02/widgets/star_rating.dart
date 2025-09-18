@@ -16,11 +16,11 @@ class StarRating extends StatelessWidget {
 
     return Row(
       children: List.generate(total, (i) {
-        final fullStars = full + (roundsUp ? 1 : 0);
-        final isHalf = i == full && hasHalf && !roundsUp;
-        final icon = i < fullStars
+        final totalFullStars = full + (roundsUp ? 1 : 0);
+        final shouldShowHalfStar = i == full && hasHalf && !roundsUp;
+        final icon = i < totalFullStars
             ? Icons.star
-            : isHalf
+            : shouldShowHalfStar
             ? Icons.star_half
             : Icons.star_border;
         return Icon(icon, size: 20, color: const Color(0xFFFFB400));
