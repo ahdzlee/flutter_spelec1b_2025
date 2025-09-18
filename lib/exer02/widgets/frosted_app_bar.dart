@@ -8,6 +8,7 @@ class FrostedAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   static const EdgeInsets _outerPadding = EdgeInsets.fromLTRB(12, 8, 12, 8);
   static const double _topSpacer = 64;
+  static const int _backgroundAlpha = 60;
 
   @override
   Size get preferredSize =>
@@ -30,7 +31,7 @@ class FrostedAppBar extends StatelessWidget implements PreferredSizeWidget {
             child: Container(
               height: kToolbarHeight,
               padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
-              color: Colors.white.withAlpha(60),
+              color: Colors.white.withAlpha(_backgroundAlpha),
               child: Stack(
                 fit: StackFit.expand,
                 children: [
